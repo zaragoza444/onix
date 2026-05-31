@@ -7,9 +7,9 @@ cd "$ROOT"
 if [ ! -d .git ]; then
   git init -b main
   git add .
-  git commit -m "Initial Shiva platform scaffold"
+  git commit -m "Initial Onix platform scaffold"
   echo "Created local repo. Add remote:"
-  echo "  git remote add origin https://github.com/YOUR_USER/shiva.git"
+  echo "  git remote add origin https://github.com/YOUR_USER/onix.git"
   echo "  git push -u origin main"
 else
   echo "Git repo already exists."

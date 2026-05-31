@@ -1,11 +1,11 @@
-# Publish Shiva to GitHub and Gitea
+# Publish Onix to GitHub and Gitea
 # Usage:
 #   $env:GITHUB_TOKEN = "ghp_..."
 #   $env:GITEA_TOKEN = "..."
 #   powershell -ExecutionPolicy Bypass -File scripts/publish-remotes.ps1
 
 $ErrorActionPreference = "Stop"
-$RepoName = "shiva"
+$RepoName = "onix"
 $GitHubUser = "zaragoza444"
 $GiteaHost = "51.75.64.28"
 $GiteaUser = "zaragoza444"
@@ -13,7 +13,7 @@ $GiteaUser = "zaragoza444"
 Set-Location (Split-Path -Parent $PSScriptRoot)
 
 if (-not (Test-Path ".git")) {
-  Write-Error "Run this from the shiva repo root (git init first)."
+  Write-Error "Run this from the Onix repo root (git init first)."
 }
 
 git branch -M main
@@ -34,7 +34,7 @@ if ($env:GITHUB_TOKEN) {
   $body = @{
     name        = $RepoName
     private     = $false
-    description = "Shiva production platform: Python, FastAPI, Next.js, API receiver/sender"
+    description = "Onix production platform: Python, FastAPI, Next.js, API receiver/sender"
   } | ConvertTo-Json
   try {
     Invoke-RestMethod -Method Post -Uri "https://api.github.com/user/repos" -Headers $headers -Body $body -ContentType "application/json" | Out-Null
@@ -51,7 +51,7 @@ if ($env:GITEA_TOKEN) {
   $body = @{
     name        = $RepoName
     private     = $false
-    description = "Shiva production platform: Python, FastAPI, Next.js, API receiver/sender"
+    description = "Onix production platform: Python, FastAPI, Next.js, API receiver/sender"
   } | ConvertTo-Json
   try {
     Invoke-RestMethod -Method Post -Uri "http://${GiteaHost}/api/v1/user/repos" -Headers $headers -Body $body -ContentType "application/json" | Out-Null

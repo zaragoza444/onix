@@ -37,13 +37,13 @@ app.include_router(sender.router)
 
 @app.get("/api/health")
 def health():
-    return {"status": "ok", "platform": "shiva"}
+    return {"status": "ok", "platform": "onix"}
 
 
 @app.get("/api/v1/info")
 def platform_info():
     return {
-        "name": "Shiva",
+        "name": "Onix",
         "stack": ["python3", "docker", "postgresql", "node.js", "vercel", "github"],
         "environment": "production" if not settings.debug else "development",
         "features": ["auth", "database", "api_receiver", "api_sender"],

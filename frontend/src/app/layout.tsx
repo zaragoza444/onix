@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Shiva Platform",
+  title: "Onix Platform",
   description: "Production platform — auth, database, Python, Node.js, Vercel",
 };
 

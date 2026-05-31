@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Shiva local dev — Git Bash / WSL / macOS / Linux
+# Onix local dev — Git Bash / WSL / macOS / Linux
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
-echo "==> Shiva: starting API + web"
+echo "==> Onix: starting API + web"
 cd "$ROOT"
 
 if ! command -v docker &>/dev/null; then

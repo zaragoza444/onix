@@ -20,7 +20,7 @@ export function ApiHub() {
 
   const [sendUrl, setSendUrl] = useState("https://httpbin.org/post");
   const [sendMethod, setSendMethod] = useState("POST");
-  const [sendBody, setSendBody] = useState('{"hello": "shiva"}');
+  const [sendBody, setSendBody] = useState('{"hello": "onix"}');
   const [sendHeaders, setSendHeaders] = useState("{}");
   const [sending, setSending] = useState(false);
 

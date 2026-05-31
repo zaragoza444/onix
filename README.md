@@ -1,4 +1,4 @@
-# Shiva Platform
+# Onix Platform
 
 Production-ready scaffold: **Python 3**, **Docker**, **Node.js (Next.js)**, **GitHub**, **GitHub Codespaces**, **Vercel**, **Visual Studio Code**, **Cursor**, and **Git Bash**.
 
@@ -28,7 +28,7 @@ Production-ready scaffold: **Python 3**, **Docker**, **Node.js (Next.js)**, **Gi
 ## Quick start (Windows + Git Bash)
 
 ```bash
-cd shiva
+cd onix
 cp .env.example backend/.env
 cp .env.example frontend/.env.local
 
@@ -50,11 +50,11 @@ Or run: `bash scripts/dev.sh`
 
 ## Visual Studio Code / Cursor
 
-1. Open folder `shiva/`
+1. Open the project folder
 2. Install recommended extensions (prompt on open)
 3. Use **Run and Debug** or integrated terminal with the commands above
 
-Cursor picks up rules from `.cursor/rules/shiva-platform.mdc`.
+Cursor picks up rules from `.cursor/rules/onix-platform.mdc`.
 
 ## GitHub Codespaces
 
@@ -84,7 +84,7 @@ Set `API_ENVIRONMENT=production` in backend `.env`. Manage receiver/sender from 
 | `/api/v1/auth/me` | GET | Current user (Bearer token) |
 
 - **Local Docker**: PostgreSQL via `docker compose` (`DATABASE_URL` set automatically)
-- **Local without Docker**: SQLite default (`sqlite:///./shiva.db`)
+- **Local without Docker**: SQLite default (`sqlite:///./onix.db`)
 
 Frontend pages: `/register`, `/login`, `/dashboard`
 
@@ -94,7 +94,7 @@ Frontend pages: `/register`, `/login`, `/dashboard`
 
 **Render** — use `render.yaml` blueprint (API + managed Postgres).
 
-After deploy, copy the API URL (e.g. `https://shiva-api.onrender.com`).
+After deploy, copy the API URL (e.g. `https://onix-api.onrender.com`).
 
 ## Deploy frontend (Vercel)
 
@@ -103,14 +103,14 @@ After deploy, copy the API URL (e.g. `https://shiva-api.onrender.com`).
 3. Add the Vercel URL to API `CORS_ORIGINS`
 4. Deploy
 
-Remove `@shiva_api_url` from `vercel.json` if you configure env vars only in the Vercel dashboard.
+Remove `@onix_api_url` from `vercel.json` if you configure env vars only in the Vercel dashboard.
 
 ## Repository
 
 | Host | URL | Status |
 |------|-----|--------|
-| **GitHub** | https://github.com/zaragoza444/shiva | Live on `main` |
-| **Gitea** | http://51.75.64.28/zaragoza444/shiva | Push after SSH key + empty repo |
+| **GitHub** | https://github.com/zaragoza444/onix | Live on `main` |
+| **Gitea** | http://51.75.64.28/zaragoza444/onix | Push after SSH key + empty repo |
 
 ### Publish to both remotes
 
@@ -120,14 +120,14 @@ $env:GITEA_TOKEN = "..."        # or use SSH key id_ed25519_gitea
 powershell -ExecutionPolicy Bypass -File scripts/publish-remotes.ps1
 ```
 
-**Gitea SSH (one-time):** add `~/.ssh/id_ed25519_gitea.pub` in Gitea → SSH Keys, create empty repo `shiva`, then `git push -u gitea main`.
+**Gitea SSH (one-time):** add `~/.ssh/id_ed25519_gitea.pub` in Gitea → SSH Keys, create empty repo `onix`, then `git push -u gitea main`.
 
 CI runs on push: Python check, Next.js build, Docker build (`.github/workflows/ci.yml`).
 
 ## Project layout
 
 ```
-shiva/
+onix/
 ├── backend/          # FastAPI + Python 3
 ├── frontend/         # Next.js → Vercel
 ├── scripts/          # Git Bash helpers

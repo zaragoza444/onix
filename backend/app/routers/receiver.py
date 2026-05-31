@@ -68,7 +68,7 @@ async def ingest_webhook(
     receiver_key: str,
     request: Request,
     db: Session = Depends(get_db),
-    webhook_secret: str | None = Header(default=None, alias="X-Shiva-Webhook-Secret"),
+    webhook_secret: str | None = Header(default=None, alias="X-Onix-Webhook-Secret"),
 ):
     """Public webhook receiver — use receiver_key in URL + optional webhook secret."""
     user = db.query(User).filter(User.receiver_key == receiver_key).first()

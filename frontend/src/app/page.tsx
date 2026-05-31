@@ -17,7 +17,7 @@ export default async function Home() {
   return (
     <main className="page">
       <section className="hero">
-        <h1>Shiva Platform</h1>
+        <h1>Onix Platform</h1>
         <p>
           Production-ready stack with JWT auth, PostgreSQL, Docker, and
           one-click deploy to Vercel and Railway.

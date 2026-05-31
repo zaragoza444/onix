@@ -1,8 +1,8 @@
 {
-  "name": "Shiva Platform",
+  "name": "Onix Platform",
   "dockerComposeFile": "../docker-compose.yml",
   "service": "api",
-  "workspaceFolder": "/workspaces/shiva",
+  "workspaceFolder": "/workspaces/onix",
   "features": {
     "ghcr.io/devcontainers/features/node:1": { "version": "20" },
     "ghcr.io/devcontainers/features/python:1": { "version": "3.12" },

@@ -21,7 +21,7 @@ async def send_request(
     db: Session = Depends(get_db),
 ):
     """Send HTTP request to external URL (production API sender)."""
-    headers = {**body.headers, "User-Agent": "Shiva-API-Sender/1.0"}
+    headers = {**body.headers, "User-Agent": "Onix-API-Sender/1.0"}
     request_body = ""
     if body.body is not None:
         request_body = (

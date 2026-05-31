@@ -2,15 +2,15 @@ services:
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_USER: shiva
-      POSTGRES_PASSWORD: shiva
-      POSTGRES_DB: shiva
+      POSTGRES_USER: onix
+      POSTGRES_PASSWORD: onix
+      POSTGRES_DB: onix
     ports:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U shiva -d shiva"]
+      test: ["CMD-SHELL", "pg_isready -U onix -d onix"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -22,7 +22,7 @@ services:
     environment:
       DEBUG: "true"
       CORS_ORIGINS: "http://localhost:3000,http://127.0.0.1:3000"
-      DATABASE_URL: postgresql://shiva:shiva@db:5432/shiva
+      DATABASE_URL: postgresql://onix:onix@db:5432/onix
       JWT_SECRET: dev-secret-change-in-production
       API_ENVIRONMENT: production
     depends_on:

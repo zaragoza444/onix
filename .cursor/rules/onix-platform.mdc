@@ -1,10 +1,10 @@
 ---
-description: Shiva platform conventions
+description: Onix platform conventions
 globs: "**/*"
 alwaysApply: true
 ---
 
-# Shiva Platform
+# Onix Platform
 
 - **Backend**: Python 3.12 + FastAPI in `backend/`. Run with `uvicorn app.main:app --reload` from `backend/`.
 - **Frontend**: Next.js 15 in `frontend/`. Deploy to Vercel; set `NEXT_PUBLIC_API_URL` to the production API.

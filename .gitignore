@@ -37,4 +37,4 @@ scripts/remotes.env
 
 # Local DB
 *.db
-backend/shiva.db
+backend/onix.db

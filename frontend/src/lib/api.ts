@@ -16,18 +16,18 @@ export type AuthResponse = {
 
 export function getStoredToken(): string | null {
   if (typeof window === "undefined") return null;
-  return localStorage.getItem("shiva_token");
+  return localStorage.getItem("onix_token");
 }
 
 export function setStoredToken(token: string | null) {
   if (typeof window === "undefined") return;
-  if (token) localStorage.setItem("shiva_token", token);
-  else localStorage.removeItem("shiva_token");
+  if (token) localStorage.setItem("onix_token", token);
+  else localStorage.removeItem("onix_token");
 }
 
 export function getStoredUser(): User | null {
   if (typeof window === "undefined") return null;
-  const raw = localStorage.getItem("shiva_user");
+  const raw = localStorage.getItem("onix_user");
   if (!raw) return null;
   try {
     return JSON.parse(raw) as User;
@@ -38,8 +38,8 @@ export function getStoredUser(): User | null {
 
 export function setStoredUser(user: User | null) {
   if (typeof window === "undefined") return;
-  if (user) localStorage.setItem("shiva_user", JSON.stringify(user));
-  else localStorage.removeItem("shiva_user");
+  if (user) localStorage.setItem("onix_user", JSON.stringify(user));
+  else localStorage.removeItem("onix_user");
 }
 
 export async function apiFetch<T>(

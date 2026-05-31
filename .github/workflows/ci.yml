@@ -1,4 +1,4 @@
-name: Shiva CI
+name: Onix CI
 
 on:
   push:

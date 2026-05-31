@@ -14,7 +14,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <Link href="/" className="logo">
-        Shiva
+        Onix
       </Link>
       <nav>
         {user ? (

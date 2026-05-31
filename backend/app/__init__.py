@@ -1,1 +1,1 @@
-"""Shiva platform API."""
+"""Onix platform API."""
