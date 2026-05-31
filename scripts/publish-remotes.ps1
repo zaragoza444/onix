@@ -74,7 +74,8 @@ Write-Host "Pushing to Gitea..."
 if ($env:GITEA_TOKEN) {
   git push -u gitea main
 } else {
-  $env:GIT_SSH_COMMAND = "ssh -i $env:USERPROFILE/.ssh/id_ed25519_gitea -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
+  $key = "$env:USERPROFILE/.ssh/id_ed25519_gitea" -replace '\\', '/'
+  $env:GIT_SSH_COMMAND = "ssh -i `"$key`" -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new"
   git push -u gitea main
 }
 if ($LASTEXITCODE -ne 0) {

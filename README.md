@@ -105,13 +105,22 @@ After deploy, copy the API URL (e.g. `https://shiva-api.onrender.com`).
 
 Remove `@shiva_api_url` from `vercel.json` if you configure env vars only in the Vercel dashboard.
 
-## GitHub setup
+## Repository
 
-```bash
-bash scripts/setup-github.sh
-git remote add origin https://github.com/YOUR_USER/shiva.git
-git push -u origin main
+| Host | URL | Status |
+|------|-----|--------|
+| **GitHub** | https://github.com/zaragoza444/shiva | Live on `main` |
+| **Gitea** | http://51.75.64.28/zaragoza444/shiva | Push after SSH key + empty repo |
+
+### Publish to both remotes
+
+```powershell
+$env:GITHUB_TOKEN = "ghp_..."   # optional if Git Credential Manager is set up
+$env:GITEA_TOKEN = "..."        # or use SSH key id_ed25519_gitea
+powershell -ExecutionPolicy Bypass -File scripts/publish-remotes.ps1
 ```
+
+**Gitea SSH (one-time):** add `~/.ssh/id_ed25519_gitea.pub` in Gitea → SSH Keys, create empty repo `shiva`, then `git push -u gitea main`.
 
 CI runs on push: Python check, Next.js build, Docker build (`.github/workflows/ci.yml`).
 

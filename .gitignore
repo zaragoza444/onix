@@ -33,6 +33,7 @@ Thumbs.db
 # Secrets
 *.pem
 secrets/
+scripts/remotes.env
 
 # Local DB
 *.db
