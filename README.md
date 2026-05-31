@@ -105,6 +105,32 @@ After deploy, copy the API URL (e.g. `https://onix-api.onrender.com`).
 
 Remove `@onix_api_url` from `vercel.json` if you configure env vars only in the Vercel dashboard.
 
+## Deploy (production)
+
+### 1. Backend — Render (recommended)
+
+1. Open https://dashboard.render.com → **New → Blueprint**
+2. Connect **github.com/zaragoza444/onix** (uses `render.yaml`)
+3. After deploy, copy the API URL (e.g. `https://onix-api.onrender.com`)
+4. In Render service env, set `CORS_ORIGINS` to your Vercel frontend URL
+
+### 2. Frontend — Vercel
+
+1. Open https://vercel.com/new → Import **zaragoza444/onix**
+2. Set **Root Directory** to `frontend`
+3. Add env var: `NEXT_PUBLIC_API_URL` = your Render/Railway API URL
+4. Deploy
+
+### 3. CLI / automation
+
+```powershell
+# Optional tokens — then:
+powershell -ExecutionPolicy Bypass -File scripts/deploy.ps1
+```
+
+GitHub Actions auto-deploy on push to `main` when these secrets are set:
+`VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`, `ONIX_API_URL`, `RENDER_DEPLOY_HOOK`
+
 ## Repository
 
 | Host | URL | Status |
