@@ -1,0 +1,13 @@
+# Deploy backend on Railway: https://railway.app
+# 1. New project → Deploy from GitHub → set root directory to `backend`
+# 2. Add PostgreSQL plugin; Railway sets DATABASE_URL automatically
+# 3. Set JWT_SECRET and CORS_ORIGINS (your Vercel URL)
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+healthcheckPath = "/api/health"
+healthcheckTimeout = 30
+restartPolicyType = "ON_FAILURE"

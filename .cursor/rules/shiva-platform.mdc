@@ -1,0 +1,14 @@
+---
+description: Shiva platform conventions
+globs: "**/*"
+alwaysApply: true
+---
+
+# Shiva Platform
+
+- **Backend**: Python 3.12 + FastAPI in `backend/`. Run with `uvicorn app.main:app --reload` from `backend/`.
+- **Frontend**: Next.js 15 in `frontend/`. Deploy to Vercel; set `NEXT_PUBLIC_API_URL` to the production API.
+- **Docker**: `docker compose up` for full stack locally.
+- **API routes**: Prefix with `/api/` (e.g. `/api/health`, `/api/v1/auth/...`).
+- **Auth**: JWT Bearer tokens; user model in SQLAlchemy; PostgreSQL in Docker/prod.
+- Keep changes minimal; match existing patterns in each folder.
